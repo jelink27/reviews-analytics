@@ -28,7 +28,7 @@ print('平均是', sum_len/len(data)) # 總長度/留言數 就是留言的平�
 new = [] #新的清單
 for d in data:
     if len(d) < 100: #長度小於100
-        new.append(d) #把D裝進new清單
+        new.append(d) #把d裝進new清單
 print('一共有', len(new), '筆清單')
 
 #========
@@ -37,5 +37,13 @@ good = [] #留言中提及good
 for d in data:
     if 'good' in d:
         good.append(d)
+        
+#上面那段也可以寫成
+
+#good = [d for d in data if 'good'in d]
 print(good[0])
 print('一共有', len(good),'筆留言提到good')
+
+bad = ['bad' in d for d in data] 後面沒篩選會有一百萬筆
+# 'bad' in d 每一筆資料如果有bad 就放true 進bad [] 如果沒有就放false
+# list comprehension
