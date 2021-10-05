@@ -30,3 +30,12 @@ for d in data:
     if len(d) < 100: #長度小於100
         new.append(d) #把D裝進new清單
 print('一共有', len(new), '筆清單')
+
+#========
+
+good = [] #留言中提及good
+for d in data:
+    if 'good' in d:
+        good.append(d)
+print(good[0])
+print('一共有', len(good),'筆留言提到good')
