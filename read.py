@@ -14,7 +14,7 @@ print(data[0])
 print('--------------')
 print(data[1])
 
-
+#========
 #這一百萬筆的留言平均長度是多少
 sum_len = 0 #初始等於0
 
@@ -22,3 +22,11 @@ for d in data: #每一筆資料叫d 每個d是一個字串
     sum_len += len(d) # 等於sum_len = sum_len + len(d)
     #讀第一筆的時候把留言長度加回到sum_len裡面存回去
 print('平均是', sum_len/len(data)) # 總長度/留言數 就是留言的平均長度
+
+#========
+
+new = [] #新的清單
+for d in data:
+    if len(d) < 100: #長度小於100
+        new.append(d) #把D裝進new清單
+print('一共有', len(new), '筆清單')
